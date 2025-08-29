@@ -73,7 +73,7 @@
         .opcao {
             display: flex;
             background-color: #ddd;
-            padding: .4rem;
+            padding: .8rem;
             border-radius: .5rem;
         }
 
@@ -81,7 +81,6 @@
             background-color: #ccc;
             color: black;
             box-shadow: 0rem .2rem .3rem .03rem #e7e7e7;
-            ;
         }
 
         .opcao:hover .icone-final {
@@ -93,7 +92,6 @@
             color: #4a4949;
         }
 
-
         .icone-inicial {
             /* border: .1rem solid red; */
             width: 1.5rem;
@@ -102,14 +100,15 @@
 
         .rotulo {
             flex: 1;
+            /* border: .1rem solid blue; */
         }
 
         .icone-final {
             /* border: .1rem solid red; */
             width: 1.5rem;
-            margin-left: .3rem;
             opacity: 0;
             transition: opacity 0.3seg ease;
+            text-align: right;
         }
 
         /* Corpo principal */
@@ -183,7 +182,7 @@
             }
         }
     </style>
-    
+
     <script src="https://kit.fontawesome.com/b581796bdd.js" crossorigin="anonymous"></script>
 </head>
 
@@ -201,7 +200,7 @@
             <div class="tile">📞 Contato</div>
             <div class="tile">⚙️ Configurações</div>
             <a href="login.html">
-                <div class="tile">
+                <div class="opcao">
                     <div class="icone-inicial">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </div>
