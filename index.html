@@ -2,182 +2,188 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Query e Flexbox</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query e Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-    /* Cabeçalho */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-    }
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
 
-    .logo {
-      font-size: 1.5rem;
-    }
+        .logo {
+            font-size: 1.5rem;
+        }
 
-    .title {
-      font-size: 1.2rem;
-    }
+        .title {
+            font-size: 1.2rem;
+        }
 
-    .menu {
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+        .menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-    /* Layout principal */
-    .container {
-      display: flex;
-      flex: 1;
-    }
+        /* Layout principal */
+        .container {
+            display: flex;
+            flex: 1;
+        }
 
-    /* Menu lateral */
-    nav {
-      width: 200px;
-      background-color: #eee;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+        /* Menu lateral */
+        nav {
+            width: 200px;
+            background-color: #eee;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    .tile {
-      padding: 15px;
-      background-color: #ddd;
-      border-radius: 8px;
-      text-align: center;
-      cursor: pointer;
-    }
+        .tile {
+            padding: 15px;
+            background-color: #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
 
-    .tile:hover {
-      background-color: #ccc;
-    }
+        .tile:hover {
+            background-color: #ccc;
+        }
 
-    /* Corpo principal */
-    main {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+        /* Corpo principal */
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-    .card {
-      width: 200px;
-      height: 300px;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        .card {
+            width: 200px;
+            height: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .card img {
-      width: 100%;
-      object-fit: cover;
-    }
+        .card img {
+            width: 100%;
+            object-fit: cover;
+        }
 
-    .card-content {
-      padding: 10px;
-    }
+        .card-content {
+            padding: 10px;
+        }
 
-    .price {
-      color: green;
-      font-weight: bold;
-      margin-top: 5px;
-      text-align: right;
-    }
+        .price {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+            text-align: right;
+        }
 
-    .botao {
-        width: 100%;
-        height: 2rem;
-        margin-top: 1.3rem;
-        background-color: blue;
-        color: #ddd;
-        font-weight: bold;
-        border: none;
-        border-radius: .5rem;
-    }
+        .botao {
+            width: 100%;
+            padding: .5rem;
+            margin-top: 1.3rem;
+            background-color: blue;
+            color: #ddd;
+            font-weight: bold;
+            border: none;
+            border-radius: .5rem;
+        }
 
-    /* Rodapé */
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-    }
-  </style>
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">🌟 Logo</div>
-    <div class="title">Meu Site Flexbox</div>
-    <div class="menu">☰</div>
-  </header>
+    <header>
+        <div class="logo">🌟 Logo</div>
+        <div class="title">Meu Site Flexbox</div>
+        <div class="menu">☰</div>
+    </header>
 
-  <div class="container">
-    <nav>
-      <div class="tile">🏠 Home</div>
-      <div class="tile">🛍️ Produtos</div>
-      <div class="tile">📞 Contato</div>
-      <div class="tile">⚙️ Configurações</div>
-    </nav>
+    <div class="container">
+        <nav>
+            <div class="tile">🏠 Home</div>
+            <div class="tile">🛍️ Produtos</div>
+            <div class="tile">📞 Contato</div>
+            <div class="tile">⚙️ Configurações</div>
+        </nav>
 
-    <main>
-      <div class="card">
-        <img src="asset/sorvete.png" alt="Sorvete">
-        <div class="card-content">
-          <h3>Produto 1</h3>
-          <p>Descrição breve do produto.</p>
-          <p class="price">R$ 100,00</p>
-          <button class="botao">Comprar</button>
-        </div>
-      </div>
+        <main>
+            <div class="card">
+                <img src="asset/sorvete.png" alt="Sorvete">
+                <div class="card-content">
+                    <h3>Produto 1</h3>
+                    <p>Descrição breve do produto.</p>
+                    <p class="price">R$ 100,00</p>
+                    <button class="botao">Comprar</button>
+                </div>
+            </div>
 
-      <div class="card">
-        <img src="asset/sorvete.png" alt="Sorvete">
-        <div class="card-content">
-          <h3>Produto 2</h3>
-          <p>Descrição breve do produto.</p>
-          <p class="price">R$ 150,00</p>
-          <button class="botao">Comprar</button>
-        </div>
-      </div>
+            <div class="card">
+                <img src="asset/sorvete.png" alt="Sorvete">
+                <div class="card-content">
+                    <h3>Produto 2</h3>
+                    <p>Descrição breve do produto.</p>
+                    <p class="price">R$ 150,00</p>
+                    <button class="botao">Comprar</button>
+                </div>
+            </div>
 
-      <div class="card">
-        <img src="asset/sorvete.png" alt="Sorvete">
-        <div class="card-content">
-          <h3>Produto 3</h3>
-          <p>Descrição breve do produto.</p>
-          <p class="price">R$ 200,00</p>
-          <button class="botao">Comprar</button>
-        </div>
-      </div>
-    </main>
-  </div>
+            <div class="card">
+                <img src="asset/sorvete.png" alt="Sorvete">
+                <div class="card-content">
+                    <h3>Produto 3</h3>
+                    <p>Descrição breve do produto.</p>
+                    <p class="price">R$ 200,00</p>
+                    <button class="botao">Comprar</button>
+                </div>
+            </div>
+        </main>
+    </div>
 
-  <footer>
-    &copy; 2025 - Site com Flexbox.
-  </footer>
+    <footer>
+        &copy; 2025 - Site com Flexbox.
+    </footer>
 </body>
 
 </html>
